@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City name:</strong>
+  <%= @location.city_name %>
+</p>
+
+<p>
+  <strong>Worid:</strong>
+  <%= @location.worid %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
