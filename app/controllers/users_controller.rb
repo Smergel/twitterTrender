@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if current_user.nil?
       redirect_to('/')
     end
+    @location = Location.all
   end
 
   # GET /users/new
@@ -86,6 +87,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:user_name, :email, :password, :password_confirmation, :location1, :location2, :location3)
     end
 end

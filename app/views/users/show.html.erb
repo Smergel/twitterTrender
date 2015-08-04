@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
+<html>
+<head>
+  <title>User Page</title>
+</head>
+<body>
+  <div id="topBar">
+    <div class="center">
+      <div id="trender"><em>Trender</em></div>
+      <img src="http://www.designbolts.com/wp-content/uploads/2014/12/Rabbit-Logomark-Logo-Design-Trend-2015.jpg" />
+      <div class="linker">Log Out</div>
+    </div>
+  </div>
 
-<p>
-  <strong>User name:</strong>
-  <%= @user.user_name %>
-</p>
+  <form action="">
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <input list="locations" name="locations">
+  <datalist id="locations">
+    <% @location.each do |x| %>
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
+    <% end %>
+  </datalist>
+  <input type="submit">
+  </form>
 
-<p>
-  <strong>Password hash:</strong>
-  <%= @user.password_hash %>
-</p>
-
-<p>
-  <strong>Password salt:</strong>
-  <%= @user.password_salt %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</body>
+</html>

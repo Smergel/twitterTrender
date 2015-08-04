@@ -27,6 +27,7 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+  <%= select("@location1", "person_id", Location.all.collect {|l| [ l.name, p.woeid ] }, {prompt: 'Select Location'}) %>
   <div class="actions">
     <%= f.submit %>
   </div>
