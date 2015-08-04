@@ -27,7 +27,9 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  <%= select("@location1", "person_id", Location.all.collect {|l| [ l.name, p.woeid ] }, {prompt: 'Select Location'}) %>
+  <%= select("@location1", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
+  <%= select("@location2", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
+  <%= select("@location3", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
   <div class="actions">
     <%= f.submit %>
   </div>

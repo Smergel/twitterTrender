@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  # begin
+
     @client = Twitter::REST::Client.new do |config|
       config.consumer_key        = "tbAVrOKqVOIcL1oF0rKadJ6u7"
       config.consumer_secret     = "Rv8iygnmryB6Zuffsx8T3R6A45ZlrnpPCZjRf62nAhdff1qqia"
@@ -13,9 +13,6 @@ class HomeController < ApplicationController
     @location3 = Location.find(22)
 
     @woeid = [@location1, @location2, @location3]
-    
-  # rescue
-  #   flash[:notice] = "It looks like something has gone wrong"
   end
 end
 
