@@ -21,16 +21,19 @@
 	</div>
 	<div class="feeder">
 		<div class="center">
-			<%= 
-			<div class="left">
-				<% @trends.each do |x| %>
-					<div class="twits">
-						<%= @location %>
-					    <span><%= x.name %></span><br />
-					</div>
-				<% end %>
-			</div>
+			<% @woeid.each do |x| %>
+				<div class="feeds">
+					<%= x.city_name %><br />
+				    <% @feed = @client.trends(id = x.woeid) %>
+				    <% @feed.each do |x| %>
+					    <%= x.name %><br />
+				    <% end %>
+				</div>
+			<% end %>
 		</div>
+	</div>
+	<div id="footer">
+
 	</div>
 </body>
 </html>
