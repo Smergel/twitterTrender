@@ -5,20 +5,33 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    @users = User.all
+    if current_user.nil? || current_user.admin != true
+      redirect_to('/')
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user.nil?
+      redirect_to('/')
+    end
   end
 
   # GET /users/new
   def new
     @user = User.new
+    if !current_user.nil?
+      redirect_to('/')
+    end
   end
 
   # GET /users/1/edit
   def edit
+    if current_user.nil? || edit_user_path != edit_user_path(current_user)
+      redirect_to('/')
+    end
   end
 
   # POST /users
@@ -59,6 +72,9 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+    if current_user.nil? || edit_user_path != edit_user_path(current_user)
+      redirect_to('/')
+    end
   end
 
   private
@@ -69,6 +85,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user_name, :email, :password, :admin)
+      params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
     end
 end
