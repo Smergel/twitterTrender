@@ -1,0 +1,33 @@
+<div class="login-form">
+  <ul>
+    <li>
+      <% if flash[:notice] %>
+        <div class="login-notice"><%= flash[:notice] %></div>
+      <% end %>
+    </li>
+    <li>
+      <% if current_user.nil? %>
+        <%= form_tag log_in_path do |f| %>
+          <div class="field">
+            <%= label_tag(:user_name) %>
+            <%= text_field_tag(:user_name) %>
+          </div>
+          <div class="field">
+            <%= label_tag(:password) %>
+            <% password_field_tag(:password) %>
+          </div>
+          <div class="actions">
+            <%= submit_tag(:Login) %>
+          </div>
+        <% end %>
+      <% end %>
+    </li>
+    <li>
+      <li>
+      <% if current_user.nil? %>
+        <a href="/users/new">Sign up for twitterTrendr</a>
+      <% end %>
+    </li>
+    </li>
+  </ul>
+</div>
