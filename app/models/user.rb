@@ -29,10 +29,8 @@ class User < ActiveRecord::Base
 
   validates :user_name, :presence => true,
                         :uniqueness => true
-  validates :email, :precense => true,
-                    :uniquness => true,
-                    :format { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
-
-
+  validates :email, :presence => true,
+                    :uniqueness => true,
+                    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
 end
