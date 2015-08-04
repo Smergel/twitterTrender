@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804152329) do
+ActiveRecord::Schema.define(version: 20150804153315) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "city_name"
-    t.integer  "worid"
+    t.integer  "woeid"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
