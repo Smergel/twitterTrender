@@ -62,7 +62,7 @@ body {
 	width: 100%;
 	height: auto;
 
-	.left {
+	.feeds {
 	width: 300px;
 	height: auto;
 	float: left;
@@ -72,4 +72,9 @@ body {
 		color: $colorBlue;
 		}
 	}
+}
+#footer {
+	width: 100%;
+	height: 200px;
+	background-color: $colorBlue;
 }

@@ -6,9 +6,12 @@ class HomeController < ApplicationController
       config.access_token        = "353428664-2F0iPSHITiDwvJAf7Wuw3AKNZBwEdcztkzHLFeR5"
       config.access_token_secret = "E9iViX7nALHloE3pckYwbEPtzytu6cgNjfxnGsIcgoLT3"
     end
-    @location = Location.all
-    @trends = @client.trends(id = @location[0])
 
+    @location1 = Location.find(1)
+    @location2 = Location.find(10)
+    @location3 = Location.find(22)
+
+    @woeid = [@location1, @location2, @location3]
 
   end
 
