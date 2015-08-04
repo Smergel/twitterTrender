@@ -27,9 +27,9 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
   </div>
-  <%= select("@location1", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
-  <%= select("@location2", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
-  <%= select("@location3", "location_id", Location.all.collect {|l| [ l.city_name, l.id ] }, {prompt: 'City to Follow'}) %>
+  <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
+  <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
+  <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
   <div class="actions">
     <%= f.submit %>
   </div>

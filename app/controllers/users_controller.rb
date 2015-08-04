@@ -26,6 +26,8 @@ class UsersController < ApplicationController
     if !current_user.nil?
       redirect_to('/')
     end
+
+    @location = Location.all
   end
 
   # GET /users/1/edit
