@@ -7,6 +7,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_salt
       t.boolean :admin
 
+      t.integer :location1
+      t.integer :location2
+      t.integer :location3
+
       t.timestamps null: false
     end
   end

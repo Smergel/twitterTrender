@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20150804153315) do
     t.string   "password_hash"
     t.string   "password_salt"
     t.boolean  "admin"
+    t.integer  "location1"
+    t.integer  "location2"
+    t.integer  "location3"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
