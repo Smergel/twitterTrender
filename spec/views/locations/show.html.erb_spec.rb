@@ -4,7 +4,8 @@ RSpec.describe "locations/show", type: :view do
   before(:each) do
     @location = assign(:location, Location.create!(
       :city_name => "City Name",
-      :worid => 1
+      :woeid => 1,
+      :user_id => 2
     ))
   end
 
@@ -12,5 +13,6 @@ RSpec.describe "locations/show", type: :view do
     render
     expect(rendered).to match(/City Name/)
     expect(rendered).to match(/1/)
+    expect(rendered).to match(/2/)
   end
 end

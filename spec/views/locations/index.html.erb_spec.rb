@@ -5,11 +5,13 @@ RSpec.describe "locations/index", type: :view do
     assign(:locations, [
       Location.create!(
         :city_name => "City Name",
-        :worid => 1
+        :woeid => 1,
+        :user_id => 2
       ),
       Location.create!(
         :city_name => "City Name",
-        :worid => 1
+        :woeid => 1,
+        :user_id => 2
       )
     ])
   end
@@ -18,5 +20,6 @@ RSpec.describe "locations/index", type: :view do
     render
     assert_select "tr>td", :text => "City Name".to_s, :count => 2
     assert_select "tr>td", :text => 1.to_s, :count => 2
+    assert_select "tr>td", :text => 2.to_s, :count => 2
   end
 end

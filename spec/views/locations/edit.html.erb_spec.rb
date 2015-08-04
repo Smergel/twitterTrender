@@ -4,7 +4,8 @@ RSpec.describe "locations/edit", type: :view do
   before(:each) do
     @location = assign(:location, Location.create!(
       :city_name => "MyString",
-      :worid => 1
+      :woeid => 1,
+      :user_id => 1
     ))
   end
 
@@ -15,7 +16,9 @@ RSpec.describe "locations/edit", type: :view do
 
       assert_select "input#location_city_name[name=?]", "location[city_name]"
 
-      assert_select "input#location_worid[name=?]", "location[worid]"
+      assert_select "input#location_woeid[name=?]", "location[woeid]"
+
+      assert_select "input#location_user_id[name=?]", "location[user_id]"
     end
   end
 end
