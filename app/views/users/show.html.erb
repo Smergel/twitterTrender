@@ -10,12 +10,21 @@
       <div class="linker">Log Out</div>
     </div>
   </div>
-  <div id="picker">
+
+  <form action="">
+
+  <input list="locations" name="locations">
+  <datalist id="locations">
     <% @location.each do |x| %>
-      <ul>
-        <li><%= x.city_name %></li>
-      </ul>
+      <option value="Internet Explorer">
+      <option value="Firefox">
+      <option value="Chrome">
+      <option value="Opera">
+      <option value="Safari">
     <% end %>
-  </div>
+  </datalist>
+  <input type="submit">
+  </form>
+
 </body>
 </html>
