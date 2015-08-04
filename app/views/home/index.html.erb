@@ -23,10 +23,12 @@
 		<div class="center">
 			<% @woeid.each do |x| %>
 				<div class="feeds">
-					<%= x.city_name %><br />
+					<span class="city_name"><%= x.city_name %></span><br />
 				    <% @feed = @client.trends(id = x.woeid) %>
 				    <% @feed.each do |x| %>
-					    <%= x.name %><br />
+					    <ul class="trend_names">
+					    	<li><%= x.name %></li>
+					    </ul>
 				    <% end %>
 				</div>
 			<% end %>

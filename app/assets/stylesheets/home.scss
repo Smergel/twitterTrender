@@ -7,6 +7,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
+// Index Page -------------------------
 .center {
 	width: 1140px;
 	height: 100%;
@@ -20,16 +21,16 @@ body {
 	text-align: center;
 
 	h2, h5, img {
-	text-align: center;
-	font-weight: 100;
-	letter-spacing: 2px;
-	clear: none;
-	color: ivory;
-	padding: 0px;
-	margin: 0px;
+		text-align: center;
+		font-weight: 100;
+		letter-spacing: 2px;
+		clear: none;
+		color: ivory;
+		padding: 0px;
+		margin: 0px;
 	}	
 	img {
-	width: 175px;
+		width: 175px;
 	}
 }
 #navBar {
@@ -38,39 +39,55 @@ body {
 	border-bottom: 2px solid $colorBlue;
 
 	ul {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
-	height: 100;
-	color: $colorBlue;
-	font-family: $font;
-	list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		height: 100;
+		color: $colorBlue;
+		font-family: $font;
+		list-style-type: none;
 
 		li.logo {
-		float: left;
-		padding-top: 15px;
-		font-size: 2em;
+			float: left;
+			padding-top: 15px;
+			font-size: 2em;
 		}
 		li.buttons {
-		float: right;
-		padding: 16px 10px 0px 10px;
-		font-size: 1.5em;
+			float: right;
+			padding: 16px 10px 0px 10px;
+			font-size: 1.5em;
 		}
 	}
 }
 .feeder {
 	width: 100%;
-	height: auto;
+	height: 500px;
 
 	.feeds {
-	width: 300px;
-	height: auto;
-	float: left;
-	padding: 40px;
+		width: 300px;
+		height: auto;
+		float: left;
+		padding: 40px;
 
-		span {
-		color: $colorBlue;
+		.city_name {
+			font-size: 3em;
+			font-family: $font;
+			color: red;
+			font-style: italic;
 		}
+		.trend_names {
+			color: $colorBlue;
+			font-size: 1.5em;
+			font-weight: 100;
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+
+			li {
+				margin: 20px 0 0 0;
+				padding: 0px;
+			}
+		}	
 	}
 }
 #footer {
@@ -78,3 +95,4 @@ body {
 	height: 200px;
 	background-color: $colorBlue;
 }
+
