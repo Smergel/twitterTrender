@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('#update_cities').click(function(){
+      $('.update-overwrap').show();
+  });
+  $('#submit-button').click(function(){
+    $('.update-overwrap').hide();
+  });
+});
