@@ -17,9 +17,9 @@
 
 $(document).ready(function(){
   $('#update_cities').click(function(){
-      $('#update_form').css('margin-right', '0px');
+      $('.update-overwrap').show();
   });
-  $('#close').click(function(){
-    $('#update_form').css('margin-right', '-50%');
+  $('#submit-button').click(function(){
+    $('.update-overwrap').hide();
   });
 });
