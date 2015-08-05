@@ -27,6 +27,11 @@ class HomeController < ApplicationController
 
     @location = Location.all
     @user = User.find(session[:user_id]) if session[:user_id]     
+    
+    if !current_user.nil?
+      flash[:notice] = "let's see what's trending, " <<current_user.user_name
+    end
+    
   end
 end
 
