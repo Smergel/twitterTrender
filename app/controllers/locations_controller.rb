@@ -5,20 +5,32 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    if current_user.nil? ||current_user.admin != true
+      redirect_to '/'
+    end
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    if current_user.nil? ||current_user.admin != true
+      redirect_to '/'
+    end
   end
 
   # GET /locations/new
   def new
     @location = Location.new
+    if current_user.nil? ||current_user.admin != true
+      redirect_to '/'
+    end
   end
 
   # GET /locations/1/edit
   def edit
+    if current_user.nil? ||current_user.admin != true
+      redirect_to '/'
+    end
   end
 
   # POST /locations
@@ -58,6 +70,9 @@ class LocationsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
       format.json { head :no_content }
+    end
+    if current_user.nil? ||current_user.admin != true
+      redirect_to '/'
     end
   end
 

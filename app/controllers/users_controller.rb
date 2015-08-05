@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if current_user.nil?
       redirect_to('/')
     end
-    @location = Location.all
+    # @location = Location.all
   end
 
   # GET /users/new
@@ -42,13 +42,12 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    @location = Location.all
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to '/', notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
         session[:user_id] = @user.id
-        redirect_to '/'
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
