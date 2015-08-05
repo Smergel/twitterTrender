@@ -5,16 +5,15 @@
 <body>
 	<div id="header">
 		<div class="center">
-			<img src="http://www.designbolts.com/wp-content/uploads/2014/12/Rabbit-Logomark-Logo-Design-Trend-2015.jpg" />
+			<%= image_tag("bunny.gif") %>
 			<h2>See what's happening right now</h2><br />
 			<h5>News from your community</h5>
 		</div>
 	</div>
 	<div id="navBar">
 		<div class="center">
-			<% if current_user.nil? %>
-				<%= render 'login' %>
-			<% end %>
+			
+		</div>
 	</div>
 	<div class="feeder">
 		<div class="center">
@@ -33,7 +32,9 @@
 		</div>
 	</div>
 	<div id="footer">
-
+		<% if current_user.nil? %>
+			<div id="login_form"><%= render 'login' %></div>
+		<% end %>
 	</div>
 </body>
 </html>

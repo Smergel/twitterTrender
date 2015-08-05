@@ -68,6 +68,7 @@ body {
 		height: auto;
 		float: left;
 		padding: 40px;
+		text-align: center;
 
 		.city_name {
 			font-size: 3em;
@@ -77,6 +78,7 @@ body {
 		}
 		.trend_names {
 			color: $colorBlue;
+			text-align: left;
 			font-size: 1.5em;
 			font-weight: 100;
 			list-style-type: none;
@@ -85,7 +87,7 @@ body {
 
 			li {
 				margin: 20px 0 0 0;
-				padding: 0px;
+				padding: 0 0 0 30px;
 			}
 		}	
 	}
