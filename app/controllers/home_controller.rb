@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
     @feed = [{:name=>"#ArchThatBackChallenge", :query=>"%23ArchThatBackChallenge", :url=>"http://twitter.com/search?q=%23ArchThatBackChallenge", :promoted_content=>nil}, {:name=>"Kelly Osbourne", :query=>"%22Kelly+Osbourne%22", :url=>"http://twitter.com/search?q=%22Kelly+Osbourne%22", :promoted_content=>nil}, {:name=>"Dave Dombrowski", :query=>"%22Dave+Dombrowski%22", :url=>"http://twitter.com/search?q=%22Dave+Dombrowski%22", :promoted_content=>nil}, {:name=>"Lenny Kravitz", :query=>"%22Lenny+Kravitz%22", :url=>"http://twitter.com/search?q=%22Lenny+Kravitz%22", :promoted_content=>nil}, {:name=>"#ActionMoviesTaughtUs", :query=>"%23ActionMoviesTaughtUs", :url=>"http://twitter.com/search?q=%23ActionMoviesTaughtUs", :promoted_content=>nil}, {:name=>"Perrie", :query=>"Perrie", :url=>"http://twitter.com/search?q=Perrie", :promoted_content=>nil}, {:name=>"#WhenNoOneIsLooking", :query=>"%23WhenNoOneIsLooking", :url=>"http://twitter.com/search?q=%23WhenNoOneIsLooking", :promoted_content=>nil}, {:name=>"Arian Foster", :query=>"%22Arian+Foster%22", :url=>"http://twitter.com/search?q=%22Arian+Foster%22", :promoted_content=>nil}, {:name=>"#WHDemoDay", :query=>"%23WHDemoDay", :url=>"http://twitter.com/search?q=%23WHDemoDay", :promoted_content=>nil}, {:name=>"Miss Piggy", :query=>"%22Miss+Piggy%22", :url=>"http://twitter.com/search?q=%22Miss+Piggy%22", :promoted_content=>nil}]
 
-    if !session[:user_id].nil? 
+    if !current_user.nil? 
       @location1_id = User.find(session[:user_id]).location1
       @location2_id = User.find(session[:user_id]).location2 
       @location3_id = User.find(session[:user_id]).location3 
