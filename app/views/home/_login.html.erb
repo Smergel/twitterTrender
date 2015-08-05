@@ -1,33 +1,37 @@
-<div class="login-form">
-  <ul>
-    <li>
-      <% if flash[:notice] %>
-        <div class="login-notice"><%= flash[:notice] %></div>
-      <% end %>
-    </li>
-    <li>
-      <% if current_user.nil? %>
+<div class="login-wrapper">
+  <div class="login-form">
+    <ul>
         <%= form_tag log_in_path do |f| %>
-          <div class="field">
-            <%= label_tag(:user_name) %>
+        <li>
+          <h1>twitterTrendr</h1>
+          <h2>See what's trending worldwide</h2>
+        </li>
+        <li>
+          <div class="form-field">
+            <div class="form-title">User Name</div>
             <%= text_field_tag(:user_name) %>
           </div>
-          <div class="field">
-            <%= label_tag(:password) %>
+        </li>
+        <li>
+          <div class="form-field">
+            <div class="form-title">Password</div>
             <%= password_field_tag(:password) %>
           </div>
-          <div class="actions">
-            <%= submit_tag(:Login) %>
+        </li>
+        <li>
+          <div class="submit-container">
+            <%= submit_tag(:Login, :id=> "submit-button") %>
           </div>
+        </li>
         <% end %>
+        <li>
+          <div class="field">
+            <a href="/users/new">Sign up for twitterTrendr</a>
+          </div>
+        </li>
+        <% if flash[:alert] %>
+          <div class="login-alert"><%= flash[:alert].html_safe %></div>
       <% end %>
-    </li>
-    <li>
-      <li>
-      <% if current_user.nil? %>
-        <a href="/users/new">Sign up for twitterTrendr</a>
-      <% end %>
-    </li>
-    </li>
-  </ul>
+    </ul>
+  </div>
 </div>

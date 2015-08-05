@@ -24,7 +24,11 @@ class HomeController < ApplicationController
     end
     
       @woeid = [@location1, @location2, @location3]
-      
+    
+    if !current_user.nil?
+      flash[:notice] = "let's see what's trending, " <<current_user.user_name
+    end
+    
   end
 end
 
