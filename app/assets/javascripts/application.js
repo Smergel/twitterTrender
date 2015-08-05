@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('#update_cities').click(function(){
+      $('#update_form').css('margin-right', '0px');
+  });
+  $('#close').click(function(){
+    $('#update_form').css('margin-right', '-50%');
+  });
+});

@@ -1,0 +1,26 @@
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :user_name %><br>
+    <%= f.text_field :user_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  
+  <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
+  <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
+  <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div id="close">Close</div>
+<% end %>

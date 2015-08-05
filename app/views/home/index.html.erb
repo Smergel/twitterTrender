@@ -10,9 +10,15 @@
 			<h5>News from your community</h5>
 		</div>
 	</div>
+	<% if !@user.nil? %>
+		<div id="update_form"><%= render 'form_update' %></div>
+	<% end %>
 	<div id="navBar">
 		<div class="center">
-			
+			<ul>
+				<li class="logo"><em>Trender</em></li>
+				<li class="buttons"><button id="update_cities">Update Cities</button></li>
+			</ul>
 		</div>
 	</div>
 	<div class="feeder">

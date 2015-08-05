@@ -23,8 +23,10 @@ class HomeController < ApplicationController
       @location3 = Location.find(28)
     end
     
-      @woeid = [@location1, @location2, @location3]
-      
+    @woeid = [@location1, @location2, @location3]
+
+    @location = Location.all
+    @user = User.find(session[:user_id]) if session[:user_id]     
   end
 end
 
