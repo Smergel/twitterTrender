@@ -32,7 +32,7 @@
 	<div class="feeder">
 		<div class="center">
 			<% @locals.each do |x| %>
-				<% @feed = @client.trend(x.woeid) %>
+				<% @feed = @client.trends(x.woeid) %>
 				<div class="feeds">
 					<span class="city_name"><%= x.city_name %></span><br />
 				    <% @feed.each do |x| %>
