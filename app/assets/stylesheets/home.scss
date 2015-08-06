@@ -141,6 +141,10 @@ body {
 	vertical-align: middle;
 }
 
+#login-form {
+	height: 400px;
+}
+
 .login-form #user_name, #password, #user_user_name, #user_password, #user_password_confirmation, #user_email, #user_location1, #user_location2, #user_location3 {
 	border: 1px solid #00aeed;
 	background: #d9e6eb;
@@ -152,8 +156,16 @@ body {
 	-moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	padding:8px;
-	margin-bottom:20px;
 	width:300px;
+	margin: 0 auto;
+}
+
+#user_location1, #user_location2, #user_location3 {
+	margin-bottom: 20px;
+}
+
+#user_location1 {
+	margin-top: 10px;
 }
 
 .login-form #user_name:focus, #password:focus {
@@ -200,6 +212,7 @@ body {
 	color: #086888;
 	font-family: helvetica, serif;
 	padding: 8.5px 18px;
+	margin-bottom: 20px;
 	font-size: 14px;
 	text-decoration: none;
 	vertical-align: middle;
