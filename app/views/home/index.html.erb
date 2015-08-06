@@ -13,9 +13,11 @@
 			<h5>News from your community</h5>
 		</div>
 	</div>
-	<% if !@user.nil? %>
-		<div id="update_form"><%= render 'form_update' %></div>
-	<% end %>
+		<% if !@user.nil? %>
+			<div id="update_form">
+				<%= render 'form_update' %>
+		</div>
+		<% end %>
 	<div id="navBar">
 		<div class="center">
 			<ul>
@@ -46,7 +48,9 @@
 		</div>
 	</div>
 	<div id="footer">
-		
+		<p>
+			twitterTrender was built using Twitter's "REST" api.
+		</p>
 	</div>
 </body>
 </html>
