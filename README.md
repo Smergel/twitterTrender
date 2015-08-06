@@ -11,3 +11,4 @@
 *	Ruby on Rails back end
 *	Connected to the Twitter API
 *	HMTL5/SASS/Javascript front end  
+*	GitHub / different branches 
