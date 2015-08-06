@@ -36,3 +36,16 @@ locations = Location.create([
   { city_name: 'Tampa Bay', woeid: '55857165'},
   { city_name: 'Vancouver', woeid: '9807'},
 ])
+
+users = User.create([
+  { user_name: "Will", email: "will@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Jake", email: "jake@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Berlin", email: "berlin@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Chris", email: "chris@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Jeff", email: "jeff@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Mike", email: "mike@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Patrick", email: "patrick@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Azeez", email: "azeez@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Dave", email: "dave@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 },
+  { user_name: "Cory", email: "cory@gmail.com", password: "123456", location1: 1, location2: 15, location3: 22 }
+])

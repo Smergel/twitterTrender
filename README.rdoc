@@ -1,28 +1,13 @@
-== README
+# twitterTrender!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Welcome to the GitHub repository for twitterTrender LLC. 
 
-Things you may want to cover:
+##### Overview of the product: 
+*	twitterTrender is an app aimed at people who need news now. 
+*	If you would describe yourself as hyper-connected, this product is for you.
+*	It brings the best part of twitter to the masses, and allows you to access just the trending topics from around the world.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+##### Technical Overview: 
+*	Ruby on Rails back end
+*	Connected to the Twitter API
+*	HMTL5/SASS/Javascript front end  
