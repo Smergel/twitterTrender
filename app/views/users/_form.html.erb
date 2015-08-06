@@ -13,7 +13,7 @@
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being updated:</h2>
 
           <ul>
           <% @user.errors.full_messages.each do |message| %>
@@ -47,10 +47,16 @@
         </div>
         <%= f.password_field :password_confirmation %>
       </div>
-      <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-      <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-      <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-        <%= f.submit :id=> "submit-button" %>
+      <div class="selector-wrapper" id="selector-wrapper1">
+        <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+      </div>
+      <div class="selector-wrapper">
+        <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+      </div>
+      <div class="selector-wrapper">
+        <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+      </div>
+      <%= f.submit :id=> "submit-button" %>
     <% end %>
   </div>
 </div>

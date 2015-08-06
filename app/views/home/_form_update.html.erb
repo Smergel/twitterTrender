@@ -1,49 +1,59 @@
 <div class="update-overwrap">
-<div class="login-wrapper">
-  <div class="login-form">
-    <ul>
-        <%= form_for(@user) do |f| %>
-        <li>
-          <h1>Update User</h1>
-        </li>
-        <li>
-          <div class="form-field">
-          <div class="form-title">User Name</div>  
-            <%= f.text_field :user_name %>
-          </div>
-        </li>
-        <li>
-          <div class="form-field">
-          <div class="form-title">Email</div>
-            <%= f.text_field :email %>
-          </div>
-        </li>
-        <li>
-          <div class="form-field">
-          <div class="form-title">Password</div>
-            <%= f.password_field :password %>
-          </div>
-        </li>
-          <div class="form-field">
-          <div class="form-title">Password Confirmation</div>
-            <%= f.password_field :password_confirmation %>
-          </div>
-        </li>
-        <li>
-          <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-        </li>
-        <li>
-          <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-        <li>
-          <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}) %>
-        </li> 
-        <li>
-          <div class="submit-container">
-            <%= f.submit :Submit, id: "submit-button" %>
-          </div>
-        </li>
+  <div class="login-wrapper">
+    <div class="new-user-form">
+      <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
-      </ul>
+        </ul>
+      </div>
+    <% end %>
+      <li>
+        <h1>Update User</h1>
+      </li>
+     
+        <div class="field">
+          <div class="form-title">
+            User Name
+          </div>  
+            <%= f.text_field :user_name, :id=> "user_name" %>
+        </div>
+        <div class="field">
+          <div class="form-title">
+            Email
+          </div>
+          <%= f.text_field :email %>
+        </div>
+        <div class="form-field">
+          <div class="form-title">
+            Password
+          </div>
+          <%= f.password_field :password %>
+        </div>
+        <div class="form-field">
+          <div class="form-title">
+            Password Confirmation
+          </div>
+          <%= f.password_field :password_confirmation %>
+        </div>
+        <div class="selector-wrapper" id="selector-wrapper1">
+          <%= select(:user, :location1, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+        </div>
+        <div class="selector-wrapper">
+          <%= select(:user, :location2, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+        </div>
+        <div class="selector-wrapper">
+          <%= select(:user, :location3, @location.collect { |l| [l.city_name, l.id] }, {prompt: 'City to Follow'}, :class => "city-to-follow") %>
+        </div>
+        <div class="submit-container">
+          <%= f.submit :Submit, id: "submit-button" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
