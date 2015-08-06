@@ -53,6 +53,7 @@ body {
 	width: 400px;
 	height: 100%;
 	margin: 0 auto;
+	padding: 30px;
 	border: 0px solid #fff1d0;
 	background: #f0c908;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff1d0), to(#f0c908));
@@ -72,7 +73,7 @@ body {
 	vertical-align: middle;
 }
 
-.new-user-form #user_name, #new-user-form_password, #user_user_name, #user_password, #user_password_confirmation, #user_email, #user_location1, #user_location2, #user_location3 {
+#user_name, #new-user-form_password, #user_user_name, #user_password, #user_password_confirmation, #user_email, #user_location1, #user_location2, #user_location3 {
 	border: 1px solid #00aeed;
 	background: #d9e6eb;
 	-webkit-border-radius: 4px;
@@ -83,11 +84,14 @@ body {
 	-moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	padding:8px;
-	margin-left: 30px;
-	width:320px;
+	width:380px;
 }
 
-.new-user-form #user_name:focus, #password:focus, #user_email:focus, #user_password_confirmation:focus {
+#user_location1, #user_location2, #user_location3 {
+	width: 400px;
+	}
+
+#user_name:focus, #user_password:focus, #user_email:focus, #user_password_confirmation:focus {
 	background: #fff;
 	color: #045570;
 }
@@ -101,9 +105,8 @@ body {
 	font-weight: bold;
 }
 
-.new-user-form .form-title  {
+.new-user-form + .form-title  {
 	padding-top:10px;
-	margin-left: 30px;
 	color: #086888;
 	text-shadow: #fff1d0 0 1px 0;
 }
@@ -132,8 +135,6 @@ body {
 	color: #086888;
 	font-family: helvetica, serif;
 	padding: 8.5px 18px;
-	margin-left: 30px;
-	// margin-bottom: 20px;
 	font-size: 14px;
 	text-decoration: none;
 	vertical-align: middle;
@@ -182,6 +183,5 @@ body {
 	-moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(000,000,000,0.7) 0 0px 0px;
 	padding:8px;
-	// margin-bottom:20px;
 	width:280px;
 }

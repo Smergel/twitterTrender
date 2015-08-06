@@ -58,12 +58,14 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @location = Location.all
     respond_to do |format|
       if @user.update_attributes(user_params)
         format.html { redirect_to '/', notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { redirect_to '/' }
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
     @location = Location.all
