@@ -36,9 +36,11 @@
 				<div class="feeds">
 					<span class="city_name"><%= x.city_name %></span><br />
 				    <% @feed.each do |x| %>
-					    <ul class="trend_names">
-					    	<li><%= x[:name] %></li>
-					    </ul>
+					    <div class="ul_center">
+						    <ul class="trend_names">
+						    	<li><%= x[:name] %></li>
+						    </ul>
+						</div>
 				    <% end %>
 				</div>
 			<% end %>

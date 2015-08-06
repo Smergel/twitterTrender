@@ -66,41 +66,45 @@ body {
 			a {
 				text-decoration: none;
 				color: $colorBlue;
-			}
+			}	
 		}
 	}
 }
 .feeder {
 	width: 100%;
-	height: 500px;
+	min-height: 600px;
 
 	.feeds {
-		width: 300px;
+		width: 278px;
 		height: auto;
 		float: left;
 		padding: 40px;
 		text-align: center;
+		border: 1px solid $colorBlue;
+		border-radius: 11px;
+		margin: 50px 10px 10px 10px;
 
 		.city_name {
 			font-size: 3em;
 			font-family: $font;
 			color: red;
 			font-style: italic;
-		}
+			text-decoration: underline;
+		}		
 		.trend_names {
 			color: $colorBlue;
 			text-align: left;
+			font-weight: 200;
 			font-size: 1.5em;
-			font-weight: 100;
 			list-style-type: none;
-			margin: 0px;
+			margin: 0px auto;
 			padding: 0px;
 
 			li {
 				margin: 20px 0 0 0;
-				padding: 0 0 0 30px;
 			}
-		}	
+		}
+			
 	}
 }
 // Forms -----------------------------------
@@ -264,3 +268,51 @@ body {
 	height: 200px;
 	background-color: $colorBlue;
 }
+// Media Queries ----------------------------------
+@media (max-width: 1140px) and (min-width: 960.0000000000001px) {
+	#navBar .center { width: 960px; }
+	#header .center { width: 960px; }
+	.feeder .center { width: 960px; }
+	.feeder .center .feeds { width: 218px; }
+	.feeder .center .feeds .city_name { font-size: 2em; }
+	.feeder .center .feeds .trend_names { font-size: 1.5em; font-weight: 400; }
+}
+@media (max-width: 960px) and (min-width: 750.0000000000001px) {
+	#navBar .center { width: 750px; }
+	#header .center { width: 750px; }
+	.feeder { min-height: 550px; }
+	.feeder .center { width: 750px; }
+	.feeder .center .feeds { width: 188px; padding: 20px; }
+	.feeder .center .feeds .city_name { font-size: 1.5em; font-weight: 600; }
+	.feeder .center .feeds .trend_names { font-size: 1.3em; font-weight: 400; }
+}
+@media (max-width: 750px) and (min-width: 600.0000000000001px) {
+	#navBar .center { width: 98%; }
+	#header .center { width: 600px; }
+	.feeder .center { width: 600px; }
+	.feeder { min-height: 550px; }
+	.feeder .center .feeds { width: 138px; padding: 20px; }
+	.feeder .center .feeds .city_name { font-size: 1.5em; font-weight: 600; }
+	.feeder .center .feeds .trend_names { font-size: 1em; font-weight: 400; }
+}
+@media (max-width: 600px) {
+	#navBar .center { width: 98%; }
+	#navBar .center .logo { display: none; }
+	#navBar .center ul { text-align: center; }
+	#navBar .center ul .buttons { float: none; display: inline-block; }
+	#header .center { width: 100%; }
+	.feeder { height: 1400px; }
+	.feeder .center { width: 100%; }
+	.feeder .center .feeds { width: 95%; padding: 40px 0px 40px 0px; }
+	.feeder .center .feeds .city_name { font-size: 2.5em; font-weight: 600; }
+	.feeder .center .feeds .trend_names { font-size: 2em; font-weight: 400; text-align: center; }
+}
+
+
+
+
+
+
+
+
+
