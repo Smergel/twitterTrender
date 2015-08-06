@@ -23,7 +23,7 @@
 			<ul>
 				<% if !@user.nil? %>
 					<li class="logo"><div class="login-notice"><%= flash[:notice] %></div></li>
-					<li class="buttons"><div id="update_cities">Update Cities</div></li>
+					<li class="buttons"><a id="update_cities">Update Cities</a></li>
 					<li class="buttons"><%= link_to 'Log Out', log_out_path %></li>
 				<% end %>
 			</ul>
@@ -32,21 +32,25 @@
 	<div class="feeder">
 		<div class="center">
 			<% @locals.each do |x| %>
-				<% @feed = @client.trends(x.woeid) %>
+				
 				<div class="feeds">
 					<span class="city_name"><%= x.city_name %></span><br />
 				    <% @feed.each do |x| %>
 					    <div class="ul_center">
 						    <ul class="trend_names">
 						    	<li>
-						    		<% if x.name.start_with?('#') %>
-						    			<a href="https://twitter.com/hashtag/<%= x.name.gsub(/#/, '') %>?src=hash">
+						    		<% if current_user.nil? %>
 						    			<%= x[:name] %>
-							    		</a>
 						    		<% else %>
-							    		<a href="https://twitter.com/search?q=<%= x.name %>&src=typd">
-							    			<%= x[:name] %>
-							    		</a>
+							    		<% if x[:name].start_with?('#') %>
+							    			<a href="https://twitter.com/hashtag/<%= x[:name].gsub(/#/, '') %>?src=hash">
+							    				<%= x[:name] %>
+								    		</a>
+							    		<% else %>
+								    		<a href="https://twitter.com/search?q=<%= x[:name] %>&src=typd">
+								    			<%= x[:name] %>
+								    		</a>
+							    		<% end %>
 						    		<% end %>
 						    	</li>
 						    </ul>
