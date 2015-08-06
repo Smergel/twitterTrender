@@ -51,7 +51,6 @@ body {
 
 .new-user-form {
 	width: 400px;
-	height: 100%;
 	margin: 0 auto;
 	padding: 30px;
 	border: 0px solid #fff1d0;
@@ -139,6 +138,15 @@ body {
 	text-decoration: none;
 	vertical-align: middle;
 }
+
+.selector-wrapper {
+	padding-bottom: 20px;
+}
+
+#selector-wrapper1 {
+	padding-top: 20px;
+}
+
 #submit-button:hover {
 	border: 1px solid #086888;
 	text-shadow: #086888 0 1px 0;
