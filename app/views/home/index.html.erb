@@ -31,20 +31,29 @@
 	</div>
 	<div class="feeder">
 		<div class="center">
-			
-			<% @woeid.each do |x| %>
+			<% @locals.each do |x| %>
+				<% @feed = @client.trends(x.woeid) %>
 				<div class="feeds">
 					<span class="city_name"><%= x.city_name %></span><br />
 				    <% @feed.each do |x| %>
 					    <div class="ul_center">
 						    <ul class="trend_names">
-						    	<li><%= x[:name] %></li>
+						    	<li>
+						    		<% if x.name.start_with?('#') %>
+						    			<a href="https://twitter.com/hashtag/<%= x.name.gsub(/#/, '') %>?src=hash">
+						    			<%= x[:name] %>
+							    		</a>
+						    		<% else %>
+							    		<a href="https://twitter.com/search?q=<%= x.name %>&src=typd">
+							    			<%= x[:name] %>
+							    		</a>
+						    		<% end %>
+						    	</li>
 						    </ul>
 						</div>
 				    <% end %>
 				</div>
 			<% end %>
-			
 		</div>
 	</div>
 	<div id="footer">

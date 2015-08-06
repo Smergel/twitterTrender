@@ -80,8 +80,9 @@ body {
 		float: left;
 		padding: 40px;
 		text-align: center;
-		border: 1px solid $colorBlue;
-		border-radius: 11px;
+		border-top: 8px solid $colorBlue;
+		// border-bottom: 2px solid $colorBlue;
+		// border-radius: 11px;
 		margin: 50px 10px 10px 10px;
 
 		.city_name {
@@ -92,7 +93,6 @@ body {
 			text-decoration: underline;
 		}		
 		.trend_names {
-			color: $colorBlue;
 			text-align: left;
 			font-weight: 200;
 			font-size: 1.5em;
@@ -102,9 +102,13 @@ body {
 
 			li {
 				margin: 20px 0 0 0;
+
+				a {
+					text-decoration: none;
+					color: $colorBlue;
+				}
 			}
-		}
-			
+		}		
 	}
 }
 // Forms -----------------------------------
