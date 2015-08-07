@@ -318,7 +318,7 @@ footer p {
 	.feeder .center .feeds .city_name { font-size: 1.5em; font-weight: 600; }
 	.feeder .center .feeds .trend_names { font-size: 1em; font-weight: 400; }
 }
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 600px) and (min-device-width: 460.000000000001px) {
 	#navBar .center { width: 98%; }
 	#navBar .center .logo { display: none; }
 	#navBar .center ul { text-align: center; }
