@@ -11,7 +11,7 @@
 </div>
 	<% if !@user.nil? %>
 		<div id="update_form">
-			<%= render 'form_update' %>
+			<%= render 'form_update'  %>
 	</div>
 	<% end %>
 <div id="navBar">
@@ -19,7 +19,7 @@
 		<ul>
 			<% if !@user.nil? %>
 				<li class="logo"><div class="login-notice"><%= flash[:notice] %></div></li>
-				<li class="buttons"><a id="update_cities">Update Cities</a></li>
+				<li class="buttons"><a id="update_cities">Update Account </a></li>
 				<li class="buttons"><%= link_to 'Log Out', log_out_path %></li>
 			<% end %>
 		</ul>
