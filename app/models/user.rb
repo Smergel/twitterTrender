@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
 
   # Password generation
   attr_accessor :password
+  
+
   validates :password, :presence => true,
                        :confirmation => true,
-                       :format => { :with => /\A[([a-z]|[A-Z])0-9_-]{6,20}\z/, message: "Your password must be at least 6 characters long and include at least one number and one letter."}
+                       :format => { :with => /\A(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){6,40}\z/, message: "Your password must include at least one number, one letter, and be at least 6 characters long."}
 
   before_save :encrypt_password
 
