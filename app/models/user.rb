@@ -2,11 +2,12 @@ class User < ActiveRecord::Base
 
   has_many :locations
 
+
   # Password generation
   attr_accessor :password
   validates :password, :presence => true,
                        :confirmation => true,
-                       :format => { :with => /\A[([a-z]|[A-Z])0-9_-]{6,20}\z/, message: "Your password must be at least 6 characters long and include at least one numbee and one letter."}
+                       :format => { :with => /\A[([a-z]|[A-Z])0-9_-]{6,20}\z/, message: "Your password must be at least 6 characters long and include at least one number and one letter."}
 
   before_save :encrypt_password
 
